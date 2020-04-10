@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>1</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+	
+	{% if user.is_authenticated %}
+		<div>
+			ready next, hi <strong style="text-transform: uppercase;">{{user.username}}</strong> 
+		</div>
+	
+	{% else %}
+		<a href="accounts/registration">REGISTER</a>
+		<a href="accounts/login">LOGIN</a>
+	{% endif %}
+
+</body>
+</html>
