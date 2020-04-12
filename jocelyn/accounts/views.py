@@ -32,6 +32,16 @@ def LoginUser(request):
         user = authenticate(username=username, password=password)
         login(user)
         redirect(index)
+        if not request.user.is_authenticated:
+            redirect(NewUser)
+
 
     else:
         return render(request, 'registration/login', {'form': form})
+
+
+
+def current_user(request, username):
+    guser = User.objects.get(username=username)
+
+    return render(request, 'cur.html', {'user':guser})

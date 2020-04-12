@@ -8,10 +8,51 @@
 <body>
 	
 	{% if user.is_authenticated %}
+	<header style="display: flex; justify-content: space-around; width: 100%;">
+		<h2>...</h2>
+		<strong>ПОСЛЕДНИЕ</strong>
+		<strong>УПОМИНАНИЯ</strong>
 		<div>
-			ready next, hi <strong style="text-transform: uppercase;">{{user.username}}</strong> 
+			<input type="search" name="" placeholder="Найти пользователя">
+			<button type="submit" name="">Поиск</button> 
 		</div>
+	</header>
+	<content>
+		<div>
+			<ul style="font-size: 24px;">
+				<li><a href="{% url 'profile' %">Профиль</li>
+				<li><a href="{{user.get_absolute_url}}">Профиль</li>
+				<li><a href="{% url 'profile' %">Группы</li>
+				<li><a href="{% url 'profile' %">Друзья</li>
+			</ul>
+		</div>
+
+		<div>
+			<div style="	width: 500px;
+						    height: 400px;
+						    border: 2px double black;
+						    margin-left: 500px;
+						    text-align: center;
+						    box-sizing: border-box;}">
+						
+				<ul>
+					<li>post title</li>
+					<li>post ctx</li>
+					<li>post author</li>
+					<li>post like/dislike</li>
+					<li>post comments</li>
+				</ul>
+
+			</div>
+		</div>
+		
+
+
+
+
+	</content>
 	
+
 	{% else %}
 		<a href="accounts/registration">REGISTER</a>
 		<a href="accounts/login">LOGIN</a>
